@@ -1,0 +1,105 @@
+@import 'vars'
+@import 'global'
+
+// ========= START HEADER =========
+
+.header 
+  background-image: url("../images/backgrounds/header-bg.jpg")
+  background-repeat: no-repeat
+  background-position: center
+  background-size: cover
+  min-height: 800px
+  &__top 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 40px 0
+  &__content
+    padding: 100px 0 50px
+
+.menu
+  &__list
+    font-size: 0
+    line-height: 0
+    letter-spacing: -1px
+  &__item + &__item 
+    margin-left: 25px
+  &__link
+    letter-spacing: normal
+    font-size: 18px
+    line-height: 22px
+
+.menu__link
+  display: block
+  position: relative
+  transition: all .3s
+  overflow: hidden
+  span 
+    display: block
+    transition: all .3s
+  &::before 
+    content: attr(data-title)
+    position: absolute
+    transform: translateY(-100%)
+    color: #024556
+    text-shadow: -.5px 0 0 #024556, .5px 0 0 #024556
+    transition: all .3s
+  &:hover 
+    span 
+      transform: translateY(100%)
+    &::before
+      transform: translateY(0)
+
+.social
+  &__list
+    font-size: 0
+    line-height: 0
+    letter-spacing: -1px
+  &__item 
+    position: relative
+    font-size: 16px
+    line-height: 23px
+    letter-spacing: normal
+    &::after
+      content: ""
+      position: absolute
+      bottom: -5px
+      left: 50%
+      transform: translateX(-50%)
+      width: 4px
+      height: 4px
+      border-radius: 50%
+      background-color: transparent
+      transition: all .3s
+    &:hover::after
+      background-color: #000
+  &__item + &__item
+    margin-left: 15px
+
+.header__title 
+  position: relative
+  z-index: 1
+  font-weight: 700
+  font-size: 80px
+  line-height: 98px
+  margin-bottom: 15px
+  &::before 
+    content: "Cook&Travel"
+    color: $dark-yellow
+    position: absolute
+    z-index: -1
+    left: 3px
+    top: 3px
+
+.header__text
+  font-size: 30px
+  line-height: 37px
+  margin-bottom: 60px
+  span 
+    display: block
+  span + span 
+    margin-top: 8px
+
+// ========= END HEADER =========
+
+@import 'media'
